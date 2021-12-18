@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPK / LKP AQUARIUS - Gallery</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html#home">AQUARIUS PEKALONGAN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-right" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">Tentang</a>
+            </li>
+            <!--<li class="nav-item">
+              <a class="nav-link" href="#paket">Paket Kursus</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Paket Kursus </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink ">
+                <li><a class="dropdown-item text-light" href="index.html#komputer">Komputer</a></li>
+                <li><a class="dropdown-item text-light" href="index.html#stir">Stir Mobil</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="staff.html">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Akhir navigasi-->
+
+    <!-- Gallery -->
+    <section class="gallery min-vh-100">
+      <div class="container-lg">
+        <div class="row text-center">
+          <div class="col mb-3 mt-2">
+            <h2>Gallery Kegiatan</h2>
+          </div>
+        </div>
+        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+          <div class="col">
+            <img src="img/lat_parkir.jpg" class="gallery-item" alt="gallery" />
+            <div class="card-body">
+              <p class="card-text bg-dark text-center text-light">Belajar parkir seri dan paralel</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="img/cek_mesin.jpg" class="gallery-item" alt="gallery" />
+            <div class="card-body">
+              <p class="card-text bg-dark text-center text-light">Belajar cek kondisi mesin</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="img/kelas_teori.jpg" class="gallery-item" alt="gallery" />
+            <div class="card-body">
+              <p class="card-text bg-dark text-center text-light">Kelas teori: Safety Driving</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="img/ganti_ban.jpg" class="gallery-item" alt="gallery" />
+            <div class="card-body">
+              <p class="card-text bg-dark text-center text-light">Belajar ganti ban/roda</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="img/akreditasi1.jpg" class="gallery-item" alt="gallery" />
+            <div class="card-body">
+              <p class="card-text bg-dark text-center text-light">Proses Akreditasi</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="img/pasir_kraton.jpg" class="gallery-item" alt="gallery" />
+            <div class="card-body">
+              <p class="card-text bg-dark text-center text-light">Kerjasama Pelatihan Stir Mobil</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="img/lat_parkir.jpg" class="modal-img" alt="modal img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir gallery -->
+
+    <!-- footer -->
+    <footer class="bg-dark text-white pb-2 pt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <b>LPK/LKP AQUARIUS</b><br />
+            Jl. Dr. Wahidin No. 88 <br />
+            Pekalongan - Jateng <br />
+            (0285) 427939 <br />
+            HP: 0858 8571 0857
+          </div>
+          <div class="col">
+            <img src="img/logo_yt.png" alt="" height="50" width="50" class="img-thumbnail" />
+            <a href="https://www.youtube.com/channel/UC7OTiimDiMwtfvifk4OGeNQ" class="text-white" target="_blank">Channel : Aquarius Driving School</a>
+            <br /><br />
+            <img src="img/logo_wa.jpg" alt="" height="50" width="50" class="img-thumbnail" />
+            WhatsApp : 0858 8571 0857
+          </div>
+          <div class="col">
+            <img src="img/logo_ig.png" alt="" height="50" width="50" class="img-thumbnail" />
+            <a href="https://www.instagram.com/lpkaquariuspekalongan/" class="text-white" target="_blank">instagram: lpkaquariuspekalongan</a>
+            <br /><br />
+            <img src="img/logo_fb.png" alt="" height="50" width="50" class="img-thumbnail" />
+            <a href="https://www.facebook.com/fadlilah.anwar.37" class="text-white" target="_blank">Facebook: fadlilah.anwar.37</a>
+          </div>
+        </div>
+      </div>
+      <p class="ps-5"></p>
+    </footer>
+    <!-- Akhir Footer-->
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
