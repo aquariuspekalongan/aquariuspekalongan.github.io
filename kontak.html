@@ -49,19 +49,29 @@
         <div class="container text-center">
           <h2 class="display-3" id="kontak">Kontak Kami</h2>
           <p>Silahkan mengisi form dibawah ini. Tim kami akan segera membalas pesan anda. Terima kasih.</p>
-          <div class="row pb-3">
-            <div class="col-md-6">
-              <input class="form-control form-control-lg mb-2" type="text" placeholder="Nama lengkap" />
-              <input class="form-control form-control-lg mb-3" type="text" placeholder="Email Anda" />
-              <input class="form-control form-control-lg" type="text" placeholder="No. Handphone" />
-            </div>
-            <div class="col-md-6">
-              <textarea class="form-control form-control-lg" rows="5" placeholder="Pesan Anda"></textarea>
-            </div>
+          <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+            <strong>Terima Kasih.</strong> Pesan anda sudah terkirim.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-          <div class="col-md-3 mx-auto text-center">
-            <button class="btn btn-danger btn-lg">Kirim Pesan</button>
-          </div>
+          <form action="" method="post" name="submit-to-google-sheet">
+            <div class="row pb-3">
+              <div class="col-md-6">
+                <input class="form-control form-control-lg mb-2" type="text" placeholder="Nama lengkap" name="nama" />
+                <input class="form-control form-control-lg mb-3" type="text" placeholder="Email Anda" name="email" />
+                <input class="form-control form-control-lg" type="text" placeholder="No. Handphone" name="no_hp" />
+              </div>
+              <div class="col-md-6">
+                <textarea class="form-control form-control-lg" rows="5" placeholder="Pesan Anda" name="pesan"></textarea>
+              </div>
+            </div>
+            <div class="col-md-3 mx-auto text-center">
+              <button type="submit" class="btn btn-primary btn-kirim">Kirim Pesan</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -101,5 +111,33 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyP5SAMDdCO5tqVW59sdexs5u4sZ6Jp8jxuTz79ozfh2pnhgJ6mPk38FY8YeKqU7jB6/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol submit diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // ketika data berhasil dikirm
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            // tampilkan alert
+            myAlert.classList.toggle("d-none");
+            // reset form
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
